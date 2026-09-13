@@ -1,6 +1,15 @@
 {
+  "NAME": "CONTENTFUL",
+  "Name": "Contentful",
   "def": "contentful-entries-only.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -1297,5 +1306,8 @@
     }
   },
   "name": "contentful",
+  "name-": "contentful",
+  "name_": "contentful",
+  "name__orig": "contentful",
   "origin": "voxgig-sdk"
 }
