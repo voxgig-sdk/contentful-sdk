@@ -36,6 +36,8 @@ class EntryListMatch
 {
     public string $environment_id;
     public string $space_id;
+    public ?string $content_type = null;
+    public ?int $limit = null;
 }
 
 /** Request payload for Entry#create. */

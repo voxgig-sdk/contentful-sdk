@@ -85,6 +85,10 @@ class ContentfulConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'entry',
           'op' => [
             'create' => [
@@ -113,12 +117,22 @@ class ContentfulConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/spaces/{space_id}/environments/{environment_id}/entries',
-                  'parts' => [
-                    'spaces',
-                    '{space_id}',
-                    'environments',
-                    '{environment_id}',
-                    'entries',
+                  'segments' => [
+                    [
+                      'lit' => 'spaces',
+                    ],
+                    [
+                      'var' => 'space_id',
+                    ],
+                    [
+                      'lit' => 'environments',
+                    ],
+                    [
+                      'var' => 'environment_id',
+                    ],
+                    [
+                      'lit' => 'entries',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -129,6 +143,13 @@ class ContentfulConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.fields`',
+                  ],
+                  'parts' => [
+                    'spaces',
+                    '{space_id}',
+                    'environments',
+                    '{environment_id}',
+                    'entries',
                   ],
                 ],
               ],
@@ -173,12 +194,22 @@ class ContentfulConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/spaces/{space_id}/environments/{environment_id}/entries',
-                  'parts' => [
-                    'spaces',
-                    '{space_id}',
-                    'environments',
-                    '{environment_id}',
-                    'entries',
+                  'segments' => [
+                    [
+                      'lit' => 'spaces',
+                    ],
+                    [
+                      'var' => 'space_id',
+                    ],
+                    [
+                      'lit' => 'environments',
+                    ],
+                    [
+                      'var' => 'environment_id',
+                    ],
+                    [
+                      'lit' => 'entries',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -191,6 +222,13 @@ class ContentfulConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.items`',
+                  ],
+                  'parts' => [
+                    'spaces',
+                    '{space_id}',
+                    'environments',
+                    '{environment_id}',
+                    'entries',
                   ],
                 ],
               ],
@@ -228,17 +266,29 @@ class ContentfulConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}',
-                  'parts' => [
-                    'spaces',
-                    '{space_id}',
-                    'environments',
-                    '{environment_id}',
-                    'entries',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'entry_id' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'spaces',
+                    ],
+                    [
+                      'var' => 'space_id',
+                    ],
+                    [
+                      'lit' => 'environments',
+                    ],
+                    [
+                      'var' => 'environment_id',
+                    ],
+                    [
+                      'lit' => 'entries',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -251,6 +301,14 @@ class ContentfulConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.fields`',
+                  ],
+                  'parts' => [
+                    'spaces',
+                    '{space_id}',
+                    'environments',
+                    '{environment_id}',
+                    'entries',
+                    '{id}',
                   ],
                 ],
               ],
@@ -288,17 +346,29 @@ class ContentfulConfig
                   'kind' => 'http',
                   'method' => 'DELETE',
                   'orig' => '/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}',
-                  'parts' => [
-                    'spaces',
-                    '{space_id}',
-                    'environments',
-                    '{environment_id}',
-                    'entries',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'entry_id' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'spaces',
+                    ],
+                    [
+                      'var' => 'space_id',
+                    ],
+                    [
+                      'lit' => 'environments',
+                    ],
+                    [
+                      'var' => 'environment_id',
+                    ],
+                    [
+                      'lit' => 'entries',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -311,6 +381,14 @@ class ContentfulConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'spaces',
+                    '{space_id}',
+                    'environments',
+                    '{environment_id}',
+                    'entries',
+                    '{id}',
                   ],
                 ],
               ],
@@ -348,17 +426,29 @@ class ContentfulConfig
                   'kind' => 'http',
                   'method' => 'PUT',
                   'orig' => '/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}',
-                  'parts' => [
-                    'spaces',
-                    '{space_id}',
-                    'environments',
-                    '{environment_id}',
-                    'entries',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'entry_id' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'spaces',
+                    ],
+                    [
+                      'var' => 'space_id',
+                    ],
+                    [
+                      'lit' => 'environments',
+                    ],
+                    [
+                      'var' => 'environment_id',
+                    ],
+                    [
+                      'lit' => 'entries',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -371,6 +461,14 @@ class ContentfulConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.fields`',
+                  ],
+                  'parts' => [
+                    'spaces',
+                    '{space_id}',
+                    'environments',
+                    '{environment_id}',
+                    'entries',
+                    '{id}',
                   ],
                 ],
               ],

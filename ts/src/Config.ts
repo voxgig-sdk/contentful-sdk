@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -95,6 +106,10 @@ class Config {
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "entry",
       "op": {
         "create": {
@@ -123,12 +138,22 @@ class Config {
               "kind": "http",
               "method": "POST",
               "orig": "/spaces/{space_id}/environments/{environment_id}/entries",
-              "parts": [
-                "spaces",
-                "{space_id}",
-                "environments",
-                "{environment_id}",
-                "entries"
+              "segments": [
+                {
+                  "lit": "spaces"
+                },
+                {
+                  "var": "space_id"
+                },
+                {
+                  "lit": "environments"
+                },
+                {
+                  "var": "environment_id"
+                },
+                {
+                  "lit": "entries"
+                }
               ],
               "select": {
                 "exist": [
@@ -139,7 +164,14 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.fields`"
-              }
+              },
+              "parts": [
+                "spaces",
+                "{space_id}",
+                "environments",
+                "{environment_id}",
+                "entries"
+              ]
             }
           ]
         },
@@ -183,12 +215,22 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/spaces/{space_id}/environments/{environment_id}/entries",
-              "parts": [
-                "spaces",
-                "{space_id}",
-                "environments",
-                "{environment_id}",
-                "entries"
+              "segments": [
+                {
+                  "lit": "spaces"
+                },
+                {
+                  "var": "space_id"
+                },
+                {
+                  "lit": "environments"
+                },
+                {
+                  "var": "environment_id"
+                },
+                {
+                  "lit": "entries"
+                }
               ],
               "select": {
                 "exist": [
@@ -201,7 +243,14 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.items`"
-              }
+              },
+              "parts": [
+                "spaces",
+                "{space_id}",
+                "environments",
+                "{environment_id}",
+                "entries"
+              ]
             }
           ]
         },
@@ -238,19 +287,31 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-              "parts": [
-                "spaces",
-                "{space_id}",
-                "environments",
-                "{environment_id}",
-                "entries",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "entry_id": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "spaces"
+                },
+                {
+                  "var": "space_id"
+                },
+                {
+                  "lit": "environments"
+                },
+                {
+                  "var": "environment_id"
+                },
+                {
+                  "lit": "entries"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "environment_id",
@@ -261,7 +322,15 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.fields`"
-              }
+              },
+              "parts": [
+                "spaces",
+                "{space_id}",
+                "environments",
+                "{environment_id}",
+                "entries",
+                "{id}"
+              ]
             }
           ]
         },
@@ -298,19 +367,31 @@ class Config {
               "kind": "http",
               "method": "DELETE",
               "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-              "parts": [
-                "spaces",
-                "{space_id}",
-                "environments",
-                "{environment_id}",
-                "entries",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "entry_id": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "spaces"
+                },
+                {
+                  "var": "space_id"
+                },
+                {
+                  "lit": "environments"
+                },
+                {
+                  "var": "environment_id"
+                },
+                {
+                  "lit": "entries"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "environment_id",
@@ -321,7 +402,15 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "spaces",
+                "{space_id}",
+                "environments",
+                "{environment_id}",
+                "entries",
+                "{id}"
+              ]
             }
           ]
         },
@@ -358,19 +447,31 @@ class Config {
               "kind": "http",
               "method": "PUT",
               "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-              "parts": [
-                "spaces",
-                "{space_id}",
-                "environments",
-                "{environment_id}",
-                "entries",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "entry_id": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "spaces"
+                },
+                {
+                  "var": "space_id"
+                },
+                {
+                  "lit": "environments"
+                },
+                {
+                  "var": "environment_id"
+                },
+                {
+                  "lit": "entries"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "environment_id",
@@ -381,7 +482,15 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.fields`"
-              }
+              },
+              "parts": [
+                "spaces",
+                "{space_id}",
+                "environments",
+                "{environment_id}",
+                "entries",
+                "{id}"
+              ]
             }
           ]
         }
@@ -402,6 +511,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

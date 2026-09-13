@@ -27,6 +27,8 @@
  * @typedef {Object} EntryListMatch
  * @property {string} environment_id
  * @property {string} space_id
+ * @property {string} [content_type]
+ * @property {number} [limit]
  */
 
 /**

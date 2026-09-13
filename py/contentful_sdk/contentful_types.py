@@ -31,9 +31,14 @@ class EntryLoadMatch(TypedDict):
     space_id: str
 
 
-class EntryListMatch(TypedDict):
+class EntryListMatchRequired(TypedDict):
     environment_id: str
     space_id: str
+
+
+class EntryListMatch(EntryListMatchRequired, total=False):
+    content_type: str
+    limit: int
 
 
 class EntryCreateDataRequired(TypedDict):

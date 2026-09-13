@@ -33,6 +33,8 @@ type EntryLoadMatch struct {
 type EntryListMatch struct {
 	EnvironmentId string `json:"environment_id"`
 	SpaceId string `json:"space_id"`
+	ContentType *string `json:"content_type,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 }
 
 // EntryCreateData is the typed request payload for Entry.CreateTyped.

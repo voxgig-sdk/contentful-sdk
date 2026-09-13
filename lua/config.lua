@@ -59,6 +59,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "entry",
         ["op"] = {
           ["create"] = {
@@ -87,12 +91,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/spaces/{space_id}/environments/{environment_id}/entries",
-                ["parts"] = {
-                  "spaces",
-                  "{space_id}",
-                  "environments",
-                  "{environment_id}",
-                  "entries",
+                ["segments"] = {
+                  {
+                    ["lit"] = "spaces",
+                  },
+                  {
+                    ["var"] = "space_id",
+                  },
+                  {
+                    ["lit"] = "environments",
+                  },
+                  {
+                    ["var"] = "environment_id",
+                  },
+                  {
+                    ["lit"] = "entries",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -103,6 +117,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.fields`",
+                },
+                ["parts"] = {
+                  "spaces",
+                  "{space_id}",
+                  "environments",
+                  "{environment_id}",
+                  "entries",
                 },
               },
             },
@@ -147,12 +168,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/spaces/{space_id}/environments/{environment_id}/entries",
-                ["parts"] = {
-                  "spaces",
-                  "{space_id}",
-                  "environments",
-                  "{environment_id}",
-                  "entries",
+                ["segments"] = {
+                  {
+                    ["lit"] = "spaces",
+                  },
+                  {
+                    ["var"] = "space_id",
+                  },
+                  {
+                    ["lit"] = "environments",
+                  },
+                  {
+                    ["var"] = "environment_id",
+                  },
+                  {
+                    ["lit"] = "entries",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -165,6 +196,13 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.items`",
+                },
+                ["parts"] = {
+                  "spaces",
+                  "{space_id}",
+                  "environments",
+                  "{environment_id}",
+                  "entries",
                 },
               },
             },
@@ -202,17 +240,29 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                ["parts"] = {
-                  "spaces",
-                  "{space_id}",
-                  "environments",
-                  "{environment_id}",
-                  "entries",
-                  "{id}",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["entry_id"] = "id",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["lit"] = "spaces",
+                  },
+                  {
+                    ["var"] = "space_id",
+                  },
+                  {
+                    ["lit"] = "environments",
+                  },
+                  {
+                    ["var"] = "environment_id",
+                  },
+                  {
+                    ["lit"] = "entries",
+                  },
+                  {
+                    ["var"] = "id",
                   },
                 },
                 ["select"] = {
@@ -225,6 +275,14 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.fields`",
+                },
+                ["parts"] = {
+                  "spaces",
+                  "{space_id}",
+                  "environments",
+                  "{environment_id}",
+                  "entries",
+                  "{id}",
                 },
               },
             },
@@ -262,17 +320,29 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "DELETE",
                 ["orig"] = "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                ["parts"] = {
-                  "spaces",
-                  "{space_id}",
-                  "environments",
-                  "{environment_id}",
-                  "entries",
-                  "{id}",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["entry_id"] = "id",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["lit"] = "spaces",
+                  },
+                  {
+                    ["var"] = "space_id",
+                  },
+                  {
+                    ["lit"] = "environments",
+                  },
+                  {
+                    ["var"] = "environment_id",
+                  },
+                  {
+                    ["lit"] = "entries",
+                  },
+                  {
+                    ["var"] = "id",
                   },
                 },
                 ["select"] = {
@@ -285,6 +355,14 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "spaces",
+                  "{space_id}",
+                  "environments",
+                  "{environment_id}",
+                  "entries",
+                  "{id}",
                 },
               },
             },
@@ -322,17 +400,29 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "PUT",
                 ["orig"] = "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                ["parts"] = {
-                  "spaces",
-                  "{space_id}",
-                  "environments",
-                  "{environment_id}",
-                  "entries",
-                  "{id}",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["entry_id"] = "id",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["lit"] = "spaces",
+                  },
+                  {
+                    ["var"] = "space_id",
+                  },
+                  {
+                    ["lit"] = "environments",
+                  },
+                  {
+                    ["var"] = "environment_id",
+                  },
+                  {
+                    ["lit"] = "entries",
+                  },
+                  {
+                    ["var"] = "id",
                   },
                 },
                 ["select"] = {
@@ -345,6 +435,14 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.fields`",
+                },
+                ["parts"] = {
+                  "spaces",
+                  "{space_id}",
+                  "environments",
+                  "{environment_id}",
+                  "entries",
+                  "{id}",
                 },
               },
             },

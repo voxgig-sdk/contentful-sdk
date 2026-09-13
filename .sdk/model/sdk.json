@@ -104,12 +104,22 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/spaces/{space_id}/environments/{environment_id}/entries",
-                  "parts": [
-                    "spaces",
-                    "{space_id}",
-                    "environments",
-                    "{environment_id}",
-                    "entries"
+                  "segments": [
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "var": "space_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "entries"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -171,12 +181,22 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/spaces/{space_id}/environments/{environment_id}/entries",
-                  "parts": [
-                    "spaces",
-                    "{space_id}",
-                    "environments",
-                    "{environment_id}",
-                    "entries"
+                  "segments": [
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "var": "space_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "entries"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -230,19 +250,31 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                  "parts": [
-                    "spaces",
-                    "{space_id}",
-                    "environments",
-                    "{environment_id}",
-                    "entries",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "entry_id": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "var": "space_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "entries"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "environment_id",
@@ -294,19 +326,31 @@
                   "kind": "http",
                   "method": "DELETE",
                   "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                  "parts": [
-                    "spaces",
-                    "{space_id}",
-                    "environments",
-                    "{environment_id}",
-                    "entries",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "entry_id": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "var": "space_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "entries"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "environment_id",
@@ -358,19 +402,31 @@
                   "kind": "http",
                   "method": "PUT",
                   "orig": "/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}",
-                  "parts": [
-                    "spaces",
-                    "{space_id}",
-                    "environments",
-                    "{environment_id}",
-                    "entries",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "entry_id": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "spaces"
+                    },
+                    {
+                      "var": "space_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "entries"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "environment_id",
@@ -460,8 +516,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "go": {
               "deps": {}
@@ -682,6 +741,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -707,6 +769,10 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -758,6 +824,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -782,6 +849,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -833,6 +901,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -857,6 +926,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
         },
         "js": {
@@ -897,6 +967,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -921,6 +994,9 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.js"
+          ],
           "title": "JavaScript"
         },
         "lua": {
@@ -961,6 +1037,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -986,6 +1065,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "php": {
@@ -1020,6 +1102,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1045,6 +1130,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -1085,6 +1173,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1110,6 +1201,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "ts": {
@@ -1127,11 +1221,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -1160,6 +1249,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1184,6 +1276,14 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         }
       },

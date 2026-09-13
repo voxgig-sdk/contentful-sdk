@@ -23,6 +23,8 @@ export interface EntryLoadMatch {
 export interface EntryListMatch {
   environment_id: string
   space_id: string
+  content_type?: string
+  limit?: number
 }
 
 export interface EntryCreateData {

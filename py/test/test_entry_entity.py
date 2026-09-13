@@ -181,7 +181,7 @@ def _entry_basic_setup(extra):
         "CONTENTFUL_TEST_ENTRY_ENTID": idmap,
         "CONTENTFUL_TEST_LIVE": "FALSE",
         "CONTENTFUL_TEST_EXPLAIN": "FALSE",
-        "CONTENTFUL_APIKEY": "NONE",
+        "CONTENTFUL_APIKEY": "",
     })
 
     idmap_resolved = helpers.to_map(
@@ -195,6 +195,10 @@ def _entry_basic_setup(extra):
 
     if env.get("CONTENTFUL_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
+            # FIRST, so the generated fields below win: sdk-test-control.json's
+            # test.client.options adds to the live client, it does not
+            # redirect it.
+            runner.live_client_options(),
             {
                 "apikey": env.get("CONTENTFUL_APIKEY"),
             },

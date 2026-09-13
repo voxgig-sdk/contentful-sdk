@@ -22,6 +22,8 @@
 ---@class EntryListMatch
 ---@field environment_id string
 ---@field space_id string
+---@field content_type? string
+---@field limit? number
 
 ---@class EntryCreateData
 ---@field environment_id string
