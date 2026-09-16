@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Entry | Contentful Content Management API</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Contentful Content Management API<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/contentful-sdk">voxgig-sdk/contentful-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Contentful Content Management API</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a aria-current="page" href="../api/entry.html">Entry</a><div class="nav-sections"><a class="nav-section" href="#post-spacesspace_idenvironmentsenvironment_identries">POST /spaces/{space_id}/environments/{environment_id}/entries</a>
+<a class="nav-section" href="#get-spacesspace_idenvironmentsenvironment_identries">GET /spaces/{space_id}/environments/{environment_id}/entries</a>
+<a class="nav-section" href="#get-spacesspace_idenvironmentsenvironment_identriesentry_id">GET /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</a>
+<a class="nav-section" href="#delete-spacesspace_idenvironmentsenvironment_identriesentry_id">DELETE /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</a>
+<a class="nav-section" href="#put-spacesspace_idenvironmentsenvironment_identriesentry_id">PUT /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</a></div></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
+<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
+<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
+<a href="../features/paging.html">Pagination signals for list operations</a>
+<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
+<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
+<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
+<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="entry">Entry</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-spacesspace_idenvironmentsenvironment_identries"><code>/spaces/{space_id}/environments/{environment_id}/entries</code></a></td>
+<td><code>create</code></td>
+<td>The created entry</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-spacesspace_idenvironmentsenvironment_identries"><code>/spaces/{space_id}/environments/{environment_id}/entries</code></a></td>
+<td><code>list</code></td>
+<td>A page of entries</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-spacesspace_idenvironmentsenvironment_identriesentry_id"><code>/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</code></a></td>
+<td><code>load</code></td>
+<td>The requested entry</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-spacesspace_idenvironmentsenvironment_identriesentry_id"><code>/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Deleted</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-spacesspace_idenvironmentsenvironment_identriesentry_id"><code>/spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</code></a></td>
+<td><code>update</code></td>
+<td>The updated entry</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contentType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-spacesspace_idenvironmentsenvironment_identries" class="operation" data-method="post"><code>POST</code> /spaces/{space_id}/environments/{environment_id}/entries</h3>
+<p>Operation ID: <code>createEntry</code>.</p>
+<p>Authentication: bearer token (<code>bearerAuth</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>space_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>environment_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/vnd.contentful.management.v1+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-the-created-entry" class="status" data-status="2xx">201: The created entry</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contentType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-spacesspace_idenvironmentsenvironment_identries" class="operation" data-method="get"><code>GET</code> /spaces/{space_id}/environments/{environment_id}/entries</h3>
+<p>Operation ID: <code>listEntries</code>.</p>
+<p>Authentication: bearer token (<code>bearerAuth</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>space_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>environment_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>content_type</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>limit</code> | <code>query</code> | <code>integer</code> | No |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-a-page-of-entries" class="status" data-status="2xx">200: A page of entries</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].contentType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].fields</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>items[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-spacesspace_idenvironmentsenvironment_identriesentry_id" class="operation" data-method="get"><code>GET</code> /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</h3>
+<p>Operation ID: <code>getEntry</code>.</p>
+<p>Authentication: bearer token (<code>bearerAuth</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>space_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>environment_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-the-requested-entry" class="status" data-status="2xx">200: The requested entry</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contentType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-spacesspace_idenvironmentsenvironment_identriesentry_id" class="operation" data-method="delete"><code>DELETE</code> /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</h3>
+<p>Operation ID: <code>deleteEntry</code>.</p>
+<p>Authentication: bearer token (<code>bearerAuth</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>space_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>environment_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="204-deleted" class="status" data-status="2xx">204: Deleted</h5>
+<h2 id="update">update</h2>
+<h3 id="put-spacesspace_idenvironmentsenvironment_identriesentry_id" class="operation" data-method="put"><code>PUT</code> /spaces/{space_id}/environments/{environment_id}/entries/{entry_id}</h3>
+<p>Operation ID: <code>updateEntry</code>.</p>
+<p>Authentication: bearer token (<code>bearerAuth</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>space_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>environment_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/vnd.contentful.management.v1+json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-the-updated-entry" class="status" data-status="2xx">200: The updated entry</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contentType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

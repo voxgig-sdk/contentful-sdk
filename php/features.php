@@ -4,7 +4,14 @@ declare(strict_types=1);
 // Contentful SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/DebugFeature.php';
+require_once __DIR__ . '/feature/IdempotencyFeature.php';
+require_once __DIR__ . '/feature/MetricsFeature.php';
+require_once __DIR__ . '/feature/PagingFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class ContentfulFeatures
@@ -14,8 +21,22 @@ class ContentfulFeatures
         switch ($name) {
             case "base":
                 return new ContentfulBaseFeature();
+            case "debug":
+                return new ContentfulDebugFeature();
+            case "idempotency":
+                return new ContentfulIdempotencyFeature();
+            case "metrics":
+                return new ContentfulMetricsFeature();
+            case "paging":
+                return new ContentfulPagingFeature();
+            case "ratelimit":
+                return new ContentfulRatelimitFeature();
+            case "retry":
+                return new ContentfulRetryFeature();
             case "test":
                 return new ContentfulTestFeature();
+            case "timeout":
+                return new ContentfulTimeoutFeature();
             default:
                 return new ContentfulBaseFeature();
         }
@@ -31,7 +52,14 @@ class ContentfulFeatures
     {
         switch ($name) {
             case "base":
+            case "debug":
+            case "idempotency":
+            case "metrics":
+            case "paging":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
